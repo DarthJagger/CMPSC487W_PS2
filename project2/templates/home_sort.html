@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<h1>Home Page</h1>
+
+    <a href="/">Sort By ID</a>
+    <br><br>
+    <h3>Sorted By Name</h3>
+    <ul>
+    {% for items in storeItem %}
+    <li>
+        <a href="{{ items.title }}/">-Item Name: {{ items.name }}</a>
+        <a href="update/{{ items.title }}/">[edit]</a>
+        <a href="delete/{{ items.title }}/">[delete]</a>
+    </li>
+    {% endfor %}
+    </ul>
+{% endblock %}
